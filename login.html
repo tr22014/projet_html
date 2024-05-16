@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
+            background: #f3f3f3;
+            margin: 0;
+            background-image: url(homee.png);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .main {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            width: 500px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        h1 {
+            color:#555;
+        }
+        
+        h3 {
+            color: black;
+        }
+        
+        label {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            background-color:#555;
+            width: 100%;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="main">
+            <h1>Login</h1>
+            <h3>Enter your login information</h3>
+            <form id="loginForm" action="home.html" method="post" onsubmit="return add()">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                <span id="emailError" style="color: red;"></span> <!-- Place to display error message -->
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                <br>
+                <div class="wrap">
+                    <button type="submit">Log in</button>
+                    <input type="checkbox" onclick="showPass()">Show password
+                </div>
+                <div class="SignUp">
+                </div>
+            </form>
+            <p>Not registered? 
+                <a href="signup.html" style="text-decoration: none;">Create an account</a>
+            </p>
+        </div>
+        <a href="signup.html"><button type="button">Sign up</button></a>
+    </center>
+
+    <script>
+        function add() {
+            var passValue = document.getElementById('password').value;
+            var emailValue = document.getElementById('email').value;
+            var emailError = document.getElementById('emailError');
+
+            if (passValue.length < 8) {
+                alert('Le mot de passe doit contenir au moins 8 caractères');
+                return false; // Empêche la soumission du formulaire
+            }
+
+            if (!validateEmail(emailValue)) {
+                emailError.textContent = "Adresse e-mail invalide";
+                return false;
+            }
+
+            return true; // Autorise la soumission du formulaire
+        }
+
+        function showPass() {
+            var passInput = document.getElementById('password');
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+            } else {
+                passInput.type = 'password';
+            }
+        }
+
+        function validateEmail(email) {
+            // Expression régulière pour valider l'adresse e-mail
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+    </script>
+</body>
+</html>
