@@ -334,28 +334,32 @@ function showPass() {
         confirmPassInput.type = 'password';
     }
 }
+function validateForm() {
+    const emailInput = document.getElementById('Email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('cp');
+    var passvalue = document.getElementById('password').value;
 
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
 
-        function validateForm() {
-            const emailInput = document.getElementById('Email');
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('cp');
+    if (passwordInput.value !== confirmPasswordInput.value) {
+        alert("Passwords do not match.");
+        return false;
+    }
 
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(emailInput.value)) {
-                alert("Please enter a valid email address.");
-                return false;
-            }
+    if (passvalue.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return false;
+    }
 
-            if (passwordInput.value !== confirmPasswordInput.value) {
-                alert("Passwords do not match.");
-                return false;
-            }
-
-            // Redirect to home.html
-            window.location.href = "home.html";
-            return false; // Prevent default form submission
-        }
+    // Redirect to home.html
+    window.location.href = "home.html";
+    return false; // Prevent default form submission
+}
     </script>
 </body>
 </html>
