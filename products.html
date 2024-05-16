@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modele</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .search {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search_input {
+            padding: 10px;
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .model {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .model-info {
+            flex: 1;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .model-info h3 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        .model-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .buy-button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            margin-left: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="search">
+        <input type="text" class="search_input" placeholder="Chercher votre chaussure">
+        <button class="search-button">Rechercher</button>
+        </div>
+        <section id="models">
+            <h2>Nos Modèles</h2>
+            <div class="model">
+                <div class="model-info">
+                    <h3>ADIDAS ORIGINALS CAMPUS 00S</h3>
+                    <p>Une sneaker emblématique dotée d'un amorti confortable et d'un style rétro.</p>
+                    <p>Prix : $120</p>
+                    <a href="product.html"><button class="buy-button" >Acheter</button></a> 
+                </div>
+                <img src="adidas.jpg" alt="Sneaker 1">
+            </div>
+            <div class="model">
+                <div class="model-info">
+                    <h3>NEW BALANCE 2002R</h3>
+                    <p>Une chaussure de course ultralégère avec un amorti boost pour un confort maximal.</p>
+                    <p>Prix : $180</p>
+                    <a href="product.html"><button class="buy-button" >Acheter</button></a> 
+                </div>
+                <img src="balance.jpg" alt="Sneaker 2">
+            </div>
+            <div class="model">
+                <div class="model-info">
+                    <h3>NIKE DUNK LOW PANDA</h3>
+                    <p>La sneaker iconique de Jordan Brand, parfaite pour le style de rue.</p>
+                    <p>Prix : $150</p>
+                    <a href="product.html"><button class="buy-button" >Acheter</button></a> 
+                </div>
+                <img src="low.jpg" alt="Sneaker 3">
+            </div>
+            <div class="model">
+                <div class="model-info">
+                    <h3>ASICS GEL-SONOMA 15-50</h3>
+                    <p>Une sneaker classique avec une construction premium et un confort exceptionnel.</p>
+                    <p>Prix : $175</p>
+                    <a href="product.html"><button class="buy-button" >Acheter</button></a> 
+                </div>
+                <img src="ASICS.jpg" alt="Sneaker 4">
+            </div>
+            <div class="model">
+                <div class="model-info">
+                    <h3>NIKE ZOOM VOMERO 5</h3>
+                    <p>Une sneaker retro en cuir pleine fleur, parfaite pour un look decontracte.</p>
+                    <p>Prix : $80</p>
+                   <a href="product.html"><button class="buy-button" >Acheter</button></a> 
+                </div>
+                <img src="nike.jpg" alt="Sneaker 5">
+            </div>
+        </section>
+        <script src="script.js"></script>
+</body>
+</html>
+  
