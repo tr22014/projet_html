@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    
+</head>
+<body>
+    <header>
+        <h1 id="nav">Sneaker Shop</h1>
+        <nav id="n">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="home.html">About us</a></li>
+                <li><a href="modele.html">Sales</a></li>
+                <li><a href="login.html">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <h2>Contact me:</h2>
+        <form id="contactForm" action="comment.html" method="post">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" placeholder="Enter your name" required>
+            <label for="prenom">Prenom:</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Enter your last name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="commentaire">Commentaire:</label>
+            <input type="text" id="commentaire" name="commentaire" placeholder="Enter your comment" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                if (!contactForm.checkValidity()) {
+                    alert("Please fill out all fields.");
+                    return;
+                }
+
+                const emailInput = document.getElementById('email');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailInput.value)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                contactForm.submit();
+            });
+        });
+    </script>
+</body>
+</html>
