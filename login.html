@@ -8,8 +8,8 @@
     <style>
         body {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             font-family: sans-serif;
             line-height: 1.5;
             min-height: 100vh;
@@ -18,7 +18,7 @@
             background-image: url(homee.png);
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            
         }
         
         .main {
@@ -81,7 +81,6 @@
             <form id="loginForm" action="home.html" method="post" onsubmit="return add()">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your Email" required>
-                <span id="emailError" style="color: red;"></span> <!-- Place to display error message -->
                 <br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your Password" required>
@@ -101,22 +100,25 @@
     </center>
 
     <script>
+        function validateEmail(email) {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
         function add() {
             var passValue = document.getElementById('password').value;
             var emailValue = document.getElementById('email').value;
-            var emailError = document.getElementById('emailError');
+
 
             if (passValue.length < 8) {
                 alert('Le mot de passe doit contenir au moins 8 caractères');
-                return false; // Empêche la soumission du formulaire
+                return false; 
             }
 
             if (!validateEmail(emailValue)) {
-                emailError.textContent = "Adresse e-mail invalide";
                 return false;
             }
 
-            return true; // Autorise la soumission du formulaire
+            return true; 
         }
 
         function showPass() {
@@ -128,11 +130,6 @@
             }
         }
 
-        function validateEmail(email) {
-            // Expression régulière pour valider l'adresse e-mail
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailPattern.test(email);
-        }
     </script>
 </body>
 </html>
